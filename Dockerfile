@@ -3,6 +3,7 @@ FROM docker.optum.com/xapipoc/openjdk:8-jdk-alpine
 
 VOLUME /tmp
 
+#js
 EXPOSE 8081
 
 ADD target/*.jar app1.jar
