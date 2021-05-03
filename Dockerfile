@@ -1,5 +1,5 @@
-FROM openjdk:8-jdk-alpine
-
+#FROM openjdk:8-jdk-alpine
+FROM docker.optum.com/xapipoc/openjdk:8-jdk-alpine
 
 VOLUME /tmp
 
