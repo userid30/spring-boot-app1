@@ -33,7 +33,7 @@ pipeline{
 stage('Registring image and Docker image Build'){
     steps{
      	script{
-sh 'docker build -t my-app:2.0.0 .'
+	app = docker.build("my-app")
 }
 }
 }
