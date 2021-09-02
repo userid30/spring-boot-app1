@@ -2,7 +2,9 @@ def app
 
 pipeline{
 	 
-        agent any
+       agent {
+            label 'docker-maven-slave'
+        }
        
         tools{
             maven 'Maven'
@@ -20,14 +22,14 @@ pipeline{
 			  sh 'echo hi'
 			  }
 		  }
-        //  stage('build"'){
-          //  steps{
-	    //	script{
-              //  sh "mvn clean package -DskipTests" 
+         stage('build"'){
+            steps{
+	    	script{
+                sh "mvn clean package -DskipTests" 
 	       
-           // }
-	    //}
-       //}
+            }
+	    }
+       }
 stage('Registring image and Docker image Build'){
     steps{
      	script{
