@@ -9,25 +9,11 @@ pipeline{
             jdk 'Java 1.8'
         }
           stages{
-            '''stage('env configure') {
-                steps{
-                    sh 
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    
-                }
-            }
-            stage('checkout'){
-              steps{
-	      	script{
-                  //checkout scm
-                   git branch: 'test', url: 'https://github.optum.com/nmotati/memory-demo-api.git'
-                //git clone -b R1.0 https://github.optum.com/optumrx-experienceapi/consumer-login-api.git
-
-            }
-	    }
-          }'''
-		 
+		  stage("help"){
+			  steps{
+			  sh 'echo hi'
+			  }
+		  }
           stage('build"'){
             steps{
 	    	script{
