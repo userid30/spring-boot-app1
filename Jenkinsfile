@@ -9,7 +9,13 @@ pipeline{
             jdk 'Java 1.8'
         }
           stages{
-		  stage("help"){
+		stage("Preface"){
+            		steps{
+                		echo "Some text to support Introduction"
+               			 echo "Jenkins Pipeline with Pipeline Script"
+            		}
+	        }
+		 stage("help"){
 			  steps{
 			  sh 'echo hi'
 			  }
@@ -30,19 +36,19 @@ app = docker.build("demoapp")
 }
 }
  
-// stage('Push image to ACR with buildno tag'){
-//     steps{
-//      	script{
-// //You would need to first register with ACR before you can push images to your account
+ stage('Push image to ACR with buildno tag'){
+   steps{
+      	script{
+ //You would need to first register with ACR before you can push images to your account
 
-//   docker.withRegistry('https://demodockerrepo.azurecr.io', 'demodockerrepo') {
-//       app.push("${env.BUILD_NUMBER}")
-//       app.push("latest")
+   docker.withRegistry('https://mytestacr123.azurecr.io', 'myTestacr123') {
+       app.push("${env.BUILD_NUMBER}")
+      app.push("latest")
 
-//       }
-//      	}
-//     }
+      }
+      	}
+     }
           
-// }
+ }
 }
 }
