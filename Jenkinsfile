@@ -20,14 +20,14 @@ pipeline{
 			  sh 'echo hi'
 			  }
 		  }
-          stage('build"'){
-            steps{
-	    	script{
-                sh "mvn clean package -DskipTests" 
+        //  stage('build"'){
+          //  steps{
+	    //	script{
+              //  sh "mvn clean package -DskipTests" 
 	       
-            }
-	    }
-       }
+           // }
+	    //}
+       //}
 stage('Registring image and Docker image Build'){
     steps{
      	script{
