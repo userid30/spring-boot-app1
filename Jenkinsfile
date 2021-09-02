@@ -11,10 +11,10 @@ pipeline{
           stages{
             '''stage('env configure') {
                 steps{
-                    sh '''
+                    sh 
                     echo "PATH = ${PATH}"
                     echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    ''' 
+                    
                 }
             }
             stage('checkout'){
